@@ -1,0 +1,14 @@
+[
+  {
+    "email": "bilal.fahad999@gmail.com",
+    "name": "Bilal",
+    "passwordHash": "4ed646d045c126052edb26cb5e2536d32fb051f91fdc39d1a309e0b548780df4",
+    "createdAt": "2026-06-27T07:14:13.057Z"
+  },
+  {
+    "email": "bilal@gmail.com",
+    "name": "Bilal",
+    "passwordHash": "e8d09fdcdf61e638a5fafc1b336f3d236e5761e585deacd2d7b8a2a6a4f9210a",
+    "createdAt": "2026-06-27T07:28:40.076Z"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "1782546759243",
+    "customerEmail": "bilal.fahad999@gmail.com",
+    "customerName": "Bilal",
+    "type": "discount",
+    "value": "20%",
+    "message": "Hi",
+    "expiryDate": "2026-06-30",
+    "used": false,
+    "createdAt": "2026-06-27T07:52:39.243Z"
+  }
+]
