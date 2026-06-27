@@ -92,15 +92,12 @@
   }
 
   @media (max-width: 768px) {
-    /* Richer, warmer gold on mobile where screens render duller */
+    /* Brighter, more saturated gold for mobile — no glow/shadow, just pure color */
     .gold-text {
-      background: linear-gradient(135deg, #FFD700 0%, #FFC200 30%, #FFB800 50%, #FFC200 70%, #FFD700 100%);
-      background-size: 200% auto;
+      background: linear-gradient(135deg, #E8A800 0%, #FFC300 40%, #FFD000 60%, #E8A800 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: shimmer 3s linear infinite;
-      filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.6));
     }
   }
 
@@ -112,18 +109,7 @@
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.2), 0 0 40px rgba(212, 175, 55, 0.1);
   }
 
-  @media (max-width: 768px) {
-    .gold-glow {
-      box-shadow: 0 0 24px rgba(255, 200, 0, 0.5), 0 0 48px rgba(255, 180, 0, 0.3), 0 0 72px rgba(255, 160, 0, 0.15);
-    }
-    .glass-gold {
-      background: rgba(255, 200, 0, 0.08);
-      border: 1px solid rgba(255, 200, 0, 0.28);
-    }
-    .gold-border {
-      border: 1px solid rgba(255, 200, 0, 0.45);
-    }
-  }
+
 
   .glass {
     background: rgba(255, 255, 255, 0.03);
