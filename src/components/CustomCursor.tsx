@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(true); // default true to avoid SSR flash
 
   useEffect(() => {
+    // Hide on touch/mobile devices (coarse pointer = finger/stylus, not mouse)
+    const mq = window.matchMedia("(pointer: coarse)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const cursor = cursorRef.current;
     const dot = dotRef.current;
     if (!cursor || !dot) return;
@@ -49,7 +61,10 @@ export default function CustomCursor() {
     return () => {
       document.removeEventListener("mousemove", onMove);
     };
-  }, []);
+  }, [isMobile]);
+
+  // Don't render anything on mobile/touch devices
+  if (isMobile) return null;
 
   return (
     <>
