@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import type { MotionValue } from "motion-dom";
 import ReactLenis from "lenis/react";
 import React, { useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -21,8 +22,12 @@ const CharacterV1 = ({
   const isSpace = char === " ";
   const distanceFromCenter = index - centerIndex;
 
-  const x = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
-  const rotateX = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mv = scrollYProgress as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const x = useTransform(mv, [0, 0.5], [distanceFromCenter * 50, 0]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const rotateX = useTransform(mv, [0, 0.5], [distanceFromCenter * 50, 0]);
 
   return (
     <motion.span
@@ -42,9 +47,14 @@ const CharacterV2 = ({
 }: CharacterProps) => {
   const distanceFromCenter = index - centerIndex;
 
-  const x = useTransform(scrollYProgress, [0, 0.5], [distanceFromCenter * 50, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [Math.abs(distanceFromCenter) * 50, 0]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mv = scrollYProgress as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const x = useTransform(mv, [0, 0.5], [distanceFromCenter * 50, 0]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const scale = useTransform(mv, [0, 0.5], [0.75, 1]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const y = useTransform(mv, [0, 0.5], [Math.abs(distanceFromCenter) * 50, 0]);
 
   return (
     <motion.img
@@ -65,18 +75,16 @@ const CharacterV3 = ({
   const isSpace = char === " ";
   const distanceFromCenter = index - centerIndex;
 
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.5],
-    [0, 0.5, 1]
-  );
-  const y = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [distanceFromCenter * 30, 0]
-  );
-  const blur = useTransform(scrollYProgress, [0, 0.5], [8, 0]);
-  const filterValue = useTransform(blur, (v) => `blur(${v}px)`);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mv = scrollYProgress as any;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const opacity = useTransform(mv, [0, 0.3, 0.5], [0, 0.5, 1]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const y = useTransform(mv, [0, 0.5], [distanceFromCenter * 30, 0]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const blur = useTransform(mv, [0, 0.5], [8, 0]);
+  const filterValue = useTransform(blur, (v: number) => `blur(${v}px)`);
 
   return (
     <motion.span
