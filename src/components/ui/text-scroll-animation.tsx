@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import ReactLenis from "lenis/react";
 import React, { useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -9,7 +9,7 @@ type CharacterProps = {
   char: string;
   index: number;
   centerIndex: number;
-  scrollYProgress: ReturnType<typeof useTransform>;
+  scrollYProgress: MotionValue<number>;
 };
 
 const CharacterV1 = ({
@@ -114,7 +114,7 @@ export function TextScrollV1({ text, className }: TextScrollV1Props) {
               char={char}
               index={i}
               centerIndex={centerIndex}
-              scrollYProgress={scrollYProgress as ReturnType<typeof useTransform>}
+              scrollYProgress={scrollYProgress}
             />
           ))}
         </div>
@@ -148,7 +148,7 @@ export function TextScrollV2({ images, className }: TextScrollV2Props) {
               char={src}
               index={i}
               centerIndex={centerIndex}
-              scrollYProgress={scrollYProgress as ReturnType<typeof useTransform>}
+              scrollYProgress={scrollYProgress}
             />
           ))}
         </div>
@@ -183,7 +183,7 @@ export function TextScrollV3({ text, className }: TextScrollV3Props) {
               char={char}
               index={i}
               centerIndex={centerIndex}
-              scrollYProgress={scrollYProgress as ReturnType<typeof useTransform>}
+              scrollYProgress={scrollYProgress}
             />
           ))}
         </div>
