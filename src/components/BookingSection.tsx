@@ -310,7 +310,7 @@ export default function BookingSection() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <button
-                  onClick={() => { setSuccess(false); setShowAccountPrompt(false); }}
+                  onClick={() => { setSuccess(false); }}
                   className="cursor-pointer px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-full hover:bg-[#F2C94C] transition-colors"
                 >
                   Book Another
