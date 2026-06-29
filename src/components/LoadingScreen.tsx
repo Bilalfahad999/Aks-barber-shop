@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function LoadingScreen() {
   const [loading, setLoading] = useState(true);
@@ -28,16 +29,8 @@ export default function LoadingScreen() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative"
             >
-              <div className="w-20 h-20 rounded-full border-2 border-[#D4AF37] flex items-center justify-center">
-                <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
-                  <path
-                    d="M20 5 L20 35 M10 15 Q20 10 30 15 M10 25 Q20 20 30 25"
-                    stroke="#D4AF37"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="20" cy="8" r="2" fill="#D4AF37" />
-                </svg>
+              <div className="w-20 h-20 rounded-full border-2 border-[#D4AF37] overflow-hidden">
+                <Image src="/logo.png" alt="AK's Barber Shop" width={80} height={80} className="w-full h-full object-cover" priority />
               </div>
               {/* Spinning ring */}
               <motion.div
