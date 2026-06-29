@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Scissors, CalendarCheck, ShieldCheck } from "lucide-react";
+import { Menu, X, CalendarCheck, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
@@ -58,8 +59,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <button onClick={() => scrollTo("#home")} className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-9 h-9 rounded-full border border-[#D4AF37]/60 flex items-center justify-center group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
-              <Scissors size={16} className="text-[#D4AF37] group-hover:rotate-45 transition-transform duration-300" />
+            <div className="w-9 h-9 rounded-full border border-[#D4AF37]/60 overflow-hidden group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+              <Image src="/logo.png" alt="AK's Barber Shop" width={36} height={36} className="w-full h-full object-cover" priority />
             </div>
             <div className="leading-tight">
               <span className="block font-serif text-lg font-bold gold-text tracking-wide">AK&apos;s</span>
