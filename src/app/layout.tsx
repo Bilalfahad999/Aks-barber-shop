@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "AK's Barber Shop | Premium Grooming Experience",
   description: "Precision haircuts, beard styling, fades, and luxury grooming services. Book your appointment today.",
   keywords: "barber shop, haircut, beard trim, fade, grooming, luxury barber",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "AK's Barber Shop | Premium Grooming Experience",
     description: "Precision haircuts, beard styling, fades, and luxury grooming services.",
