@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lock, Scissors, ArrowRight, Eye, EyeClosed } from "lucide-react";
+import { Lock, ArrowRight, Eye, EyeClosed } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function StaffLoginPage() {
@@ -53,8 +54,8 @@ export default function StaffLoginPage() {
         <div className="bg-white/3 backdrop-blur-xl border border-[#D4AF37]/15 rounded-2xl p-8 shadow-2xl">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="mx-auto w-14 h-14 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center mb-4">
-              <Scissors size={22} className="text-[#D4AF37]" />
+            <div className="mx-auto w-14 h-14 rounded-full border border-[#D4AF37]/30 overflow-hidden mb-4">
+              <Image src="/logo.png" alt="AK's Barber Shop" width={56} height={56} className="w-full h-full object-cover" priority />
             </div>
             <h1 className="font-serif text-2xl font-bold text-white">Staff Login</h1>
             <p className="text-white/40 text-xs font-sans mt-1">AK&apos;s Barber Shop · Staff Portal</p>

@@ -4,10 +4,11 @@ import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Scissors, LogOut, Search, CalendarDays, Clock, User,
+  LogOut, Search, CalendarDays, Clock, User,
   CheckCircle, XCircle, AlertCircle, Loader2, Gift,
-  Trash2, Plus, ChevronDown, Phone, Mail, Star, Tag,
+  Trash2, Plus, ChevronDown, Phone, Mail, Star, Tag, Scissors,
 } from "lucide-react";
+import Image from "next/image";
 import { calcWithOffer } from "@/lib/pricing";
 
 interface Booking {
@@ -164,8 +165,8 @@ export default function StaffDashboard() {
       <header className="sticky top-0 z-40 bg-black/90 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center">
-              <Scissors size={15} className="text-[#D4AF37]" />
+            <div className="w-9 h-9 rounded-full border border-[#D4AF37]/30 overflow-hidden">
+              <Image src="/logo.png" alt="AK's Barber Shop" width={36} height={36} className="w-full h-full object-cover" priority />
             </div>
             <div>
               <p className="font-serif text-base font-bold text-white leading-tight">AK&apos;s Barber Shop</p>

@@ -6,6 +6,7 @@ import {
   Search, Calendar, CheckCircle, XCircle, Clock, RefreshCw,
   Users, CalendarCheck, Scissors, Filter, LogOut
 } from "lucide-react";
+import Image from "next/image";
 
 type Booking = {
   id: string;
@@ -126,8 +127,8 @@ export default function AdminPage() {
           animate={{ opacity: 1, scale: 1 }}
           className="glass-gold rounded-3xl p-10 w-full max-w-sm text-center"
         >
-          <div className="w-14 h-14 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mx-auto mb-6">
-            <Scissors size={26} className="text-[#D4AF37]" />
+          <div className="w-14 h-14 rounded-full border border-[#D4AF37]/30 overflow-hidden mx-auto mb-6">
+            <Image src="/logo.png" alt="AK's Barber Shop" width={56} height={56} className="w-full h-full object-cover" priority />
           </div>
           <h1 className="font-serif text-2xl font-bold text-white mb-2">Admin Access</h1>
           <p className="text-[#C8C8C8] text-sm mb-8 font-sans">AK&apos;s Barber Shop Dashboard</p>
@@ -159,8 +160,8 @@ export default function AdminPage() {
       <div className="border-b border-white/5 bg-black/90 backdrop-blur-xl sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full border border-[#D4AF37]/50 flex items-center justify-center">
-              <Scissors size={14} className="text-[#D4AF37]" />
+            <div className="w-8 h-8 rounded-full border border-[#D4AF37]/50 overflow-hidden">
+              <Image src="/logo.png" alt="AK's Barber Shop" width={32} height={32} className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="font-serif font-bold gold-text">AK&apos;s</span>

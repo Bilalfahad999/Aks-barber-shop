@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scissors, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const hours = [
   { day: "Mon – Fri", time: "10AM – 8PM" },
@@ -25,6 +26,14 @@ function TikTokIcon() {
   );
 }
 
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/5 relative overflow-hidden">
@@ -37,8 +46,8 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-full border border-[#D4AF37]/50 flex items-center justify-center">
-                <Scissors size={16} className="text-[#D4AF37]" />
+              <div className="w-10 h-10 rounded-full border border-[#D4AF37]/50 overflow-hidden">
+                <Image src="/logo.png" alt="AK's Barber Shop" width={40} height={40} className="w-full h-full object-cover" />
               </div>
               <div>
                 <span className="block font-serif text-xl font-bold gold-text">AK&apos;s</span>
@@ -68,6 +77,15 @@ export default function Footer() {
                 className="cursor-pointer w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-[#C8C8C8] hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-[0_0_12px_rgba(212,175,55,0.2)] transition-all duration-300"
               >
                 <TikTokIcon />
+              </a>
+              <a
+                href="https://www.facebook.com/p/Aks-barbershop-salon-61565348212066/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="cursor-pointer w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-[#C8C8C8] hover:border-[#D4AF37] hover:text-[#D4AF37] hover:shadow-[0_0_12px_rgba(212,175,55,0.2)] transition-all duration-300"
+              >
+                <FacebookIcon />
               </a>
             </div>
           </div>
